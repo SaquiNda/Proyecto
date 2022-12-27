@@ -28,18 +28,18 @@ class ClientController extends Controller{
 		
 		global $params;
 		
-		$this->jwtHelper->verify(array('all'));
+		$userdata = $this->jwtHelper->verify(array('all'));
 		
-		$data = $this->ClientModel->get();
+		$data = $this->ClientModel->get($userdata['user_id']);
 		
 		if(!$data)
 			$this->HttpException('Usuario no encontrado');
 		
-		return array(
+		echo json_encode (array(
 			'codeStatus'=>200,
 			'message'=>'Datos obtenidos',
 			'data'=>$data
-		);
+		));
 		
 	}
 }

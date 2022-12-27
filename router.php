@@ -13,6 +13,7 @@ $route['session/validate'] = 'SessionController/validate';
 // Productos
 $route['productos'] = 'ProductController/index';
 $route['productos/:id'] = 'ProductController/detail';
+$route['productos/listar'] = 'ProductController/list';
 
 // Carrito
 $route['carrito/listar'] = 'CartController/list';
@@ -26,7 +27,7 @@ $route['perfil'] = 'ClientController/profile';
 //----------------------------------------------------------------------
 
 // API
-$route['api/perfil/obtener'] = 'ClientController/get';
+$route['perfil/obtener'] = 'ClientController/get';
 $route['api/auth/login'] = 'SessionController/validate';
 
 // Obtener parámetros

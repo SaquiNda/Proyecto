@@ -6,8 +6,8 @@ class ProductModel extends DB{
 	* Listar todos los productos
 	*/
 	function list(){
-		$query = $this->db->query('SELECT * FROM product');
-		return $query->num_rows > 0 ? $query : false;
+		$this->query = $this->db->query('SELECT * FROM product');
+		return $this->query->num_rows > 0 ? $this->query_data() : false;
 	}
 	
 	//----------------------------------------------------------------------
